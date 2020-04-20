@@ -1,0 +1,234 @@
+@import "mixins.sass"
+@import "variables.sass"
+@import "media.sass"
+
+//общие стили для всего сайта
+body
+	font-family: $font
+
+.container
+	width: 1280px
+	margin: 0 auto
+
+.section
+	width: 100%
+	padding: 50px
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	box-sizing: border-box
+
+/*стили для хэдера*/
+
+.header
+	background: $bg
+	color: $light
+	&__title
+		display: block
+		font-size: 60px
+		line-height: 1.2
+		font-weight: 400
+	&__list
+		margin: 0
+		padding: 0
+		list-style-type: none
+		margin-top: 20px
+	&__item
+		font-size: 20px
+		line-height: 36px
+		position: relative
+		padding-left: 35px
+		&:before
+			position: absolute
+			top: 0
+			left: 0
+			display: block
+			width: 25px
+			height: 19px
+			content: "\f00c"
+			@include awesome
+			font-size: 22px
+	&__img
+		display: block
+		width: 469px
+		height: 214px
+		background: $light
+
+/*общий стиль для заголовков*/
+.title
+	font-size: 30px
+	line-height: 36px
+	display: block
+	color: $bg
+	margin: 0 0 30px 0
+
+/*секция about*/
+.about
+	&__aside
+		width: 55%
+	&__text
+		@include font(16px, 24px, $color)
+		margin-bottom: 20px
+		&:last-child
+			margin: 0
+	&__img
+		width: 430px
+		height: 245px
+		background: $bg
+
+/*секция плюсы*/
+
+.caption
+	width: 100%
+	display: flex
+	justify-content: center
+	margin: 0 0 30px 0
+
+.text
+	@include font(16px, 24px, $color)
+
+.pluses
+	background: $light-bg
+	padding-bottom: 20px
+	&__details
+		width: 44%
+		margin: 0 0 30px 50px 
+		position: relative
+		&:before
+			content: '\f067'
+			@include awesome
+			position: absolute
+			top: 5px
+			left: -50px
+			display: block
+			width: 32px
+			height: 32px
+			background: $bg
+			color: $light
+			font-size: 20px
+			text-align: center
+			line-height: 32px
+	&__summary:focus
+		outline: none
+
+details[open] summary
+	margin-bottom: 15px
+
+details[open]:before
+	content: '\f068'
+
+details summary::-webkit-details-marker
+	display: none
+details > summary 
+  list-style: none
+
+/*секция скриншотов*/
+	
+.screenshots
+	padding-bottom: 20px
+	&__figure
+		width: 49%
+		margin: 0 0 30px 0
+		display: flex
+		justify-content: space-between
+	&__img
+		display: block
+		width: 200px
+		height: 150px
+		background: $bg
+	&__item
+		width: calc(100% - 230px)
+	&__subtitle
+		@include font(24px, 30px, $bg)
+		margin-bottom: 10px
+		display: block
+
+/*секция reviews*/
+
+.rewiews
+	background: $light-bg
+	padding-bottom: 30px
+	.caption
+	&__box
+		width: 48%
+		display: flex
+		margin-bottom: 20px
+		justify-content: space-between
+	&__img
+		width: 75px
+		height: 75px
+		border: 1px solid transparent
+		border-radius: 50%
+		background: $bg
+		margin: 10px 20px 0 0
+	&__text
+		width: calc(100% - 100px)
+		padding: 15px
+		background: $review-bg
+		border-radius: 10px
+		font-size: 14px
+		font-style: italic
+		line-height: 18px
+		margin: 0 0 0 0
+		position: relative
+		&:before
+			content: ""
+			display: block
+			border: 15px solid transparent
+			border-right: 15px solid $review-bg
+			position: absolute
+			top: 15px
+			left: -30px
+		&-span
+			display: block
+			font-size: 14px
+			line-height: 18px
+			color: #989898
+			font-style: normal
+			margin-top: 10px
+
+/*Секция Buy*/
+
+.buy
+	justify-content: center
+	align-items: flex-end
+	&__box
+		background: $bg
+		color: $light
+		margin: 0 45px 0 0
+		border: 1px solid $bg
+		border-radius: 5px
+		padding-bottom: 20px
+		&:last-child
+			margin: 0 
+	&__name,
+	&__price
+		display: block
+		text-align: center
+	&__name
+		font-size: 24px
+		padding: 17px 0
+	&__price,
+	&__btn
+		color: $bg
+		background: $light
+	&__price
+		font-size: 40px
+		padding: 18px 0
+	&__list
+		margin: 20px 0
+	&__item
+		font-size: 14px
+		line-height: 24px
+		width: 250px
+	&__btn
+		text-transform: uppercase
+		width: 85%
+		display: block
+		text-decoration: none
+		margin: 0 auto
+		text-align: center
+		border-radius: 5px
+		padding: 13px 0
+		font-weight: 700
+		font-size: 18px
