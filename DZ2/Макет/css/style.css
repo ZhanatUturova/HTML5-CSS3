@@ -1,0 +1,323 @@
+@charset "UTF-8";
+body {
+  font-family: "Arial", sans-serif;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.section {
+  width: 100%;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*стили для хэдера*/
+.header {
+  background: #445162;
+  color: #fff;
+}
+
+.header__title {
+  display: block;
+  font-size: 60px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.header__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.header__item {
+  font-size: 20px;
+  line-height: 36px;
+  position: relative;
+  padding-left: 35px;
+}
+
+.header__item:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 25px;
+  height: 19px;
+  content: "\f00c";
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.header__img {
+  display: block;
+  width: 469px;
+  height: 214px;
+  background: #fff;
+}
+
+/*общий стиль для заголовков*/
+.title {
+  font-size: 30px;
+  line-height: 36px;
+  display: block;
+  color: #445162;
+  margin: 0 0 30px 0;
+}
+
+/*секция about*/
+.about__aside {
+  width: 55%;
+}
+
+.about__text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.about__img {
+  width: 430px;
+  height: 245px;
+  background: #445162;
+}
+
+/*секция плюсы*/
+.caption {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.pluses {
+  background: #f5f5f5;
+}
+
+.pluses__details {
+  width: 44%;
+  margin: 30px 0 0 50px;
+  position: relative;
+}
+
+.pluses__details:before {
+  content: '\f067';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+  font-weight: 900;
+  position: absolute;
+  top: 5px;
+  left: -50px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #445162;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 32px;
+}
+
+.pluses__summary:focus {
+  outline: none;
+}
+
+details[open] summary {
+  margin-bottom: 15px;
+}
+
+details[open]:before {
+  content: '\f068';
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary {
+  list-style: none;
+}
+
+/*секция скриншотов*/
+.screenshots__figure {
+  width: 49%;
+  margin: 30px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.screenshots__img {
+  display: block;
+  width: 200px;
+  height: 150px;
+  background: #445162;
+}
+
+.screenshots__item {
+  width: calc(100% - 230px);
+}
+
+.screenshots__subtitle {
+  font-size: 24px;
+  line-height: 30px;
+  color: #445162;
+  margin: 0;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/*секция reviews*/
+.rewiews {
+  background: #f5f5f5;
+}
+
+.rewiews .caption {
+  margin-bottom: 10px;
+}
+
+.rewiews__box {
+  width: 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.rewiews__img {
+  width: 75px;
+  height: 75px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: #445162;
+  margin: 10px 20px 0 0;
+}
+
+.rewiews__text {
+  width: calc(100% - 100px);
+  padding: 15px;
+  background: #ebebeb;
+  border-radius: 10px;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 18px;
+  margin: 0 0 0 0;
+  position: relative;
+}
+
+.rewiews__text:before {
+  content: "";
+  display: block;
+  border: 15px solid transparent;
+  border-right: 15px solid #ebebeb;
+  position: absolute;
+  top: 15px;
+  left: -30px;
+}
+
+.rewiews__text-span {
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  color: #989898;
+  font-style: normal;
+  margin-top: 10px;
+}
+
+/*Секция Buy*/
+.buy {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.buy__box {
+  background: #445162;
+  color: #fff;
+  margin: 0 45px 0 0;
+  border: 1px solid #445162;
+  border-radius: 5px;
+  padding-bottom: 20px;
+}
+
+.buy__box:last-child {
+  margin: 30px 0 0 0;
+}
+
+.buy__name, .buy__price {
+  display: block;
+  text-align: center;
+}
+
+.buy__name {
+  font-size: 24px;
+  padding: 17px 0;
+}
+
+.buy__price, .buy__btn {
+  color: #445162;
+  background: #fff;
+}
+
+.buy__price {
+  font-size: 40px;
+  padding: 18px 0;
+}
+
+.buy__list {
+  margin: 20px 0;
+}
+
+.buy__item {
+  font-size: 14px;
+  line-height: 24px;
+  width: 250px;
+}
+
+.buy__btn {
+  text-transform: uppercase;
+  width: 85%;
+  display: block;
+  text-decoration: none;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 5px;
+  padding: 13px 0;
+  font-weight: 700;
+  font-size: 18px;
+}
