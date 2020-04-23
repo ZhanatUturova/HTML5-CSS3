@@ -2,6 +2,13 @@
 @import "variables.sass"
 @import "media.sass"
 
+@font-face 
+	font-family: 'Socialico'
+	src: url(../fonts/Socialico/Socialico.eot) format("eot"),url(../fonts/Socialico/Socialico.woff) format("woff"),url(../fonts/Socialico/Socialico.ttf) format("truetype"),url(../fonts/Socialico/Socialico.svg#Socialico) format("svg") 
+	font-weight: normal	
+	font-style: normal
+
+
 //общие стили для всего сайта
 body
 	font-family: $font
@@ -58,8 +65,8 @@ body
 .title
 	font-size: 30px
 	line-height: 36px
-	display: block
 	color: $bg
+	font-weight: 400
 	margin: 0 0 30px 0
 
 /*секция about*/
@@ -71,10 +78,10 @@ body
 		margin-bottom: 20px
 		&:last-child
 			margin: 0
-	&__img
+	&__video
 		width: 430px
 		height: 245px
-		background: $bg
+		outline: none
 
 /*секция плюсы*/
 
@@ -82,41 +89,36 @@ body
 	width: 100%
 	display: flex
 	justify-content: center
-	margin: 0 0 30px 0
-
+	margin: 0
 .text
 	@include font(16px, 24px, $color)
 
 .pluses
 	background: $light-bg
-	padding-bottom: 20px
 	&__details
 		width: 44%
-		margin: 0 0 30px 50px 
+		margin: 30px 0 0 50px 
 		position: relative
-		&:before
-			content: '\f067'
-			@include awesome
-			position: absolute
-			top: 5px
-			left: -50px
-			display: block
-			width: 32px
-			height: 32px
-			background: $bg
-			color: $light
-			font-size: 20px
-			text-align: center
-			line-height: 32px
+		&[open] .pluses__summary:before
+			content: '\f068'
+		&[open] .pluses__summary
+			margin-bottom: 15px
 	&__summary:focus
 		outline: none
-
-details[open] summary
-	margin-bottom: 15px
-
-details[open]:before
-	content: '\f068'
-
+	&__summary:before
+		content: '\f067'
+		@include awesome
+		position: absolute
+		top: 5px
+		left: -50px
+		display: block
+		width: 32px
+		height: 32px
+		background: $bg
+		color: $light
+		font-size: 20px
+		text-align: center
+		line-height: 32px
 details summary::-webkit-details-marker
 	display: none
 details > summary 
@@ -125,10 +127,9 @@ details > summary
 /*секция скриншотов*/
 	
 .screenshots
-	padding-bottom: 20px
 	&__figure
 		width: 49%
-		margin: 0 0 30px 0
+		margin: 30px 0 0 0
 		display: flex
 		justify-content: space-between
 	&__img
@@ -147,13 +148,15 @@ details > summary
 
 .rewiews
 	background: $light-bg
-	padding-bottom: 30px
 	.caption
 	&__box
 		width: 48%
 		display: flex
-		margin-bottom: 20px
+		margin-top: 24px
 		justify-content: space-between
+		&:nth-child(2),
+		&:nth-child(3)
+			margin-top: 35px
 	&__img
 		width: 75px
 		height: 75px
@@ -232,3 +235,84 @@ details > summary
 		padding: 13px 0
 		font-weight: 700
 		font-size: 18px
+		&:hover
+			transform: scale(1.05)
+			color: lighten($bg,10%)
+
+/*Стили для Футера*/
+
+.footer
+	background: $bg
+	justify-content: center
+	background-image: url(../img/macbook.jpg), url(../img/laptop.jpg)
+	background-repeat: no-repeat
+	background-size: 18%, 18%
+	background-position-x: left, right
+	background-position-y: 50px, center
+	& .caption
+		color: $light
+		margin-bottom: 30px
+	&__form
+		width: 500px
+	&__input
+		display: block
+		box-sizing: border-box
+		width: 100%
+		padding: 14px 10px
+		border-radius: 5px
+		outline: none
+		border: none
+		margin-bottom: 20px
+		&::-webkit-input-placeholder
+			@include font(16px, 24px, $bg)
+		&::-moz-placeholder
+			@include font(16px, 24px, $bg)
+		&:-moz-placeholder
+			@include font(16px, 24px, $bg)
+		&:-ms-input-placeholder
+			@include font(16px, 24px, $bg)
+	&__textarea
+		height: 170px
+	&__submit
+		width: 140px
+		margin: 0 auto
+		text-transform: uppercase
+		font-weight: 700
+		color: $bg
+		&:hover
+			transform: scale(1.05)
+			color: lighten($bg,10%)
+	&__contacts
+		width: 250px
+		margin-left: 45px
+	&__info
+		display: block
+		@include font(16px, 24px, $light)
+		margin-bottom: 30px
+		position: relative
+	&__copy
+		width: 100%
+		background: $light-bg
+		margin: 0
+		text-align: center
+		font-size: 14px
+		color: $bg
+		padding: 5px 0
+	font-size: 22px
+.fab
+	font-size: 26px
+.phone
+	transform: rotate(-105deg)
+.social
+	&__link
+		font-family: 'Socialico'
+		color: $light
+		line-height: 45px
+		margin-left: -4px
+		font-weight: 400
+		font-size: 59px
+		text-decoration: none
+		&:first-child
+			margin-left: 0
+		&:hover
+			color: darken($light, 12%)
