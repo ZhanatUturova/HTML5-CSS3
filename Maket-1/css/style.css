@@ -1,10 +1,19 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'Socialico';
+  src: url(../fonts/Socialico/Socialico.eot) format("eot"), url(../fonts/Socialico/Socialico.woff) format("woff"), url(../fonts/Socialico/Socialico.ttf) format("truetype"), url(../fonts/Socialico/Socialico.svg#Socialico) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: "Arial", sans-serif; }
+  font-family: "Arial", sans-serif;
+}
 
 .container {
   width: 1280px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .section {
   width: 100%;
@@ -18,69 +27,87 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 /*стили для хэдера*/
 .header {
   background: #445162;
-  color: #fff; }
-  .header__title {
-    display: block;
-    font-size: 60px;
-    line-height: 1.2;
-    font-weight: 400; }
-  .header__list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    margin-top: 20px; }
-  .header__item {
-    font-size: 20px;
-    line-height: 36px;
-    position: relative;
-    padding-left: 35px; }
-    .header__item:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 25px;
-      height: 19px;
-      content: "\f00c";
-      font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
-      font-weight: 900;
-      font-size: 22px; }
-  .header__img {
-    display: block;
-    width: 469px;
-    height: 214px;
-    background: #fff; }
+  color: #fff;
+}
+
+.header__title {
+  display: block;
+  font-size: 60px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.header__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.header__item {
+  font-size: 20px;
+  line-height: 36px;
+  position: relative;
+  padding-left: 35px;
+}
+
+.header__item:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 25px;
+  height: 19px;
+  content: "\f00c";
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.header__img {
+  display: block;
+  width: 469px;
+  height: 214px;
+  background: #fff;
+}
 
 /*общий стиль для заголовков*/
 .title {
   font-size: 30px;
   line-height: 36px;
-  display: block;
   color: #445162;
-  margin: 0 0 30px 0; }
+  font-weight: 400;
+  margin: 0 0 30px 0;
+}
 
 /*секция about*/
 .about__aside {
-  width: 55%; }
+  width: 55%;
+}
 
 .about__text {
   font-size: 16px;
   line-height: 24px;
   color: #333;
   margin: 0;
-  margin-bottom: 20px; }
-  .about__text:last-child {
-    margin: 0; }
+  margin-bottom: 20px;
+}
 
-.about__img {
+.about__text:last-child {
+  margin: 0;
+}
+
+.about__video {
   width: 430px;
   height: 245px;
-  background: #445162; }
+  outline: none;
+}
 
 /*секция плюсы*/
 .caption {
@@ -91,123 +118,154 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin: 0 0 30px 0; }
+  margin: 0;
+}
 
 .text {
   font-size: 16px;
   line-height: 24px;
   color: #333;
-  margin: 0; }
+  margin: 0;
+}
 
 .pluses {
   background: #f5f5f5;
-  padding-bottom: 20px; }
-  .pluses__details {
-    width: 44%;
-    margin: 0 0 30px 50px;
-    position: relative; }
-    .pluses__details:before {
-      content: '\f067';
-      font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
-      font-weight: 900;
-      position: absolute;
-      top: 5px;
-      left: -50px;
-      display: block;
-      width: 32px;
-      height: 32px;
-      background: #445162;
-      color: #fff;
-      font-size: 20px;
-      text-align: center;
-      line-height: 32px; }
-  .pluses__summary:focus {
-    outline: none; }
+}
 
-details[open] summary {
-  margin-bottom: 15px; }
+.pluses__details {
+  width: 44%;
+  margin: 30px 0 0 50px;
+  position: relative;
+}
 
-details[open]:before {
-  content: '\f068'; }
+.pluses__details[open] .pluses__summary:before {
+  content: '\f068';
+}
+
+.pluses__details[open] .pluses__summary {
+  margin-bottom: 15px;
+}
+
+.pluses__summary:focus {
+  outline: none;
+}
+
+.pluses__summary:before {
+  content: '\f067';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+  font-weight: 900;
+  position: absolute;
+  top: 5px;
+  left: -50px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #445162;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 32px;
+}
 
 details summary::-webkit-details-marker {
-  display: none; }
+  display: none;
+}
 
 details > summary {
-  list-style: none; }
+  list-style: none;
+}
 
 /*секция скриншотов*/
-.screenshots {
-  padding-bottom: 20px; }
-  .screenshots__figure {
-    width: 49%;
-    margin: 0 0 30px 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-  .screenshots__img {
-    display: block;
-    width: 200px;
-    height: 150px;
-    background: #445162; }
-  .screenshots__item {
-    width: calc(100% - 230px); }
-  .screenshots__subtitle {
-    font-size: 24px;
-    line-height: 30px;
-    color: #445162;
-    margin: 0;
-    margin-bottom: 10px;
-    display: block; }
+.screenshots__figure {
+  width: 49%;
+  margin: 30px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.screenshots__img {
+  display: block;
+  width: 200px;
+  height: 150px;
+  background: #445162;
+}
+
+.screenshots__item {
+  width: calc(100% - 230px);
+}
+
+.screenshots__subtitle {
+  font-size: 24px;
+  line-height: 30px;
+  color: #445162;
+  margin: 0;
+  margin-bottom: 10px;
+  display: block;
+}
 
 /*секция reviews*/
 .rewiews {
   background: #f5f5f5;
-  padding-bottom: 30px; }
-  .rewiews__box {
-    width: 48%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 20px;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-  .rewiews__img {
-    width: 75px;
-    height: 75px;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    background: #445162;
-    margin: 10px 20px 0 0; }
-  .rewiews__text {
-    width: calc(100% - 100px);
-    padding: 15px;
-    background: #ebebeb;
-    border-radius: 10px;
-    font-size: 14px;
-    font-style: italic;
-    line-height: 18px;
-    margin: 0 0 0 0;
-    position: relative; }
-    .rewiews__text:before {
-      content: "";
-      display: block;
-      border: 15px solid transparent;
-      border-right: 15px solid #ebebeb;
-      position: absolute;
-      top: 15px;
-      left: -30px; }
-    .rewiews__text-span {
-      display: block;
-      font-size: 14px;
-      line-height: 18px;
-      color: #989898;
-      font-style: normal;
-      margin-top: 10px; }
+}
+
+.rewiews__box {
+  width: 48%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 24px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.rewiews__box:nth-child(2), .rewiews__box:nth-child(3) {
+  margin-top: 35px;
+}
+
+.rewiews__img {
+  width: 75px;
+  height: 75px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: #445162;
+  margin: 10px 20px 0 0;
+}
+
+.rewiews__text {
+  width: calc(100% - 100px);
+  padding: 15px;
+  background: #ebebeb;
+  border-radius: 10px;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 18px;
+  margin: 0 0 0 0;
+  position: relative;
+}
+
+.rewiews__text:before {
+  content: "";
+  display: block;
+  border: 15px solid transparent;
+  border-right: 15px solid #ebebeb;
+  position: absolute;
+  top: 15px;
+  left: -30px;
+}
+
+.rewiews__text-span {
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  color: #989898;
+  font-style: normal;
+  margin-top: 10px;
+}
 
 /*Секция Buy*/
 .buy {
@@ -216,42 +274,203 @@ details > summary {
   justify-content: center;
   -webkit-box-align: end;
   -ms-flex-align: end;
-  align-items: flex-end; }
-  .buy__box {
-    background: #445162;
-    color: #fff;
-    margin: 0 45px 0 0;
-    border: 1px solid #445162;
-    border-radius: 5px;
-    padding-bottom: 20px; }
-    .buy__box:last-child {
-      margin: 0; }
-  .buy__name, .buy__price {
-    display: block;
-    text-align: center; }
-  .buy__name {
-    font-size: 24px;
-    padding: 17px 0; }
-  .buy__price, .buy__btn {
-    color: #445162;
-    background: #fff; }
-  .buy__price {
-    font-size: 40px;
-    padding: 18px 0; }
-  .buy__list {
-    margin: 20px 0; }
-  .buy__item {
-    font-size: 14px;
-    line-height: 24px;
-    width: 250px; }
-  .buy__btn {
-    text-transform: uppercase;
-    width: 85%;
-    display: block;
-    text-decoration: none;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 5px;
-    padding: 13px 0;
-    font-weight: 700;
-    font-size: 18px; }
+  align-items: flex-end;
+}
+
+.buy__box {
+  background: #445162;
+  color: #fff;
+  margin: 0 45px 0 0;
+  border: 1px solid #445162;
+  border-radius: 5px;
+  padding-bottom: 20px;
+}
+
+.buy__box:last-child {
+  margin: 0;
+}
+
+.buy__name, .buy__price {
+  display: block;
+  text-align: center;
+}
+
+.buy__name {
+  font-size: 24px;
+  padding: 17px 0;
+}
+
+.buy__price, .buy__btn {
+  color: #445162;
+  background: #fff;
+}
+
+.buy__price {
+  font-size: 40px;
+  padding: 18px 0;
+}
+
+.buy__list {
+  margin: 20px 0;
+}
+
+.buy__item {
+  font-size: 14px;
+  line-height: 24px;
+  width: 250px;
+}
+
+.buy__btn {
+  text-transform: uppercase;
+  width: 85%;
+  display: block;
+  text-decoration: none;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 5px;
+  padding: 13px 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.buy__btn:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  color: #596a80;
+}
+
+/*Стили для Футера*/
+.footer {
+  background: #445162;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-image: url(../img/macbook.jpg), url(../img/laptop.jpg);
+  background-repeat: no-repeat;
+  background-size: 18%, 18%;
+  background-position-x: left, right;
+  background-position-y: 50px, center;
+  font-size: 22px;
+}
+
+.footer .caption {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.footer__form {
+  width: 500px;
+}
+
+.footer__input {
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.footer__input::-webkit-input-placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #445162;
+  margin: 0;
+}
+
+.footer__input::-moz-placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #445162;
+  margin: 0;
+}
+
+.footer__input:-moz-placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #445162;
+  margin: 0;
+}
+
+.footer__input:-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #445162;
+  margin: 0;
+}
+
+.footer__textarea {
+  height: 170px;
+}
+
+.footer__submit {
+  width: 140px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #445162;
+}
+
+.footer__submit:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  color: #596a80;
+}
+
+.footer__contacts {
+  width: 250px;
+  margin-left: 45px;
+}
+
+.footer__info {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.footer__copy {
+  width: 100%;
+  background: #f5f5f5;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #445162;
+  padding: 5px 0;
+}
+
+.fab {
+  font-size: 26px;
+}
+
+.phone {
+  -webkit-transform: rotate(-105deg);
+  -ms-transform: rotate(-105deg);
+  transform: rotate(-105deg);
+}
+
+.social__link {
+  font-family: 'Socialico';
+  color: #fff;
+  line-height: 45px;
+  margin-left: -4px;
+  font-weight: 400;
+  font-size: 59px;
+  text-decoration: none;
+}
+
+.social__link:first-child {
+  margin-left: 0;
+}
+
+.social__link:hover {
+  color: #e0e0e0;
+}
